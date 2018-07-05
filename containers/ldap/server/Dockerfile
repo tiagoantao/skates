@@ -1,4 +1,4 @@
-FROM tiagoantao/skates-base
+FROM tiagoantao/skates
 MAINTAINER Tiago Antao <tiagoantao@gmail.com>
 
 RUN apt-get update && apt-get -y upgrade && apt-get install -y \
