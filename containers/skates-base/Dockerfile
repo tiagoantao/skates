@@ -12,11 +12,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     python3 \
     supervisor \
     wget \
-    zabbix-agent \
     && rm -rf /var/lib/apt/lists/*
-
-#this machine cannot be run without adding a root key
-#(and server key should be changed also)
 
 #You probably also need a /etc/ldap.conf
 
@@ -27,7 +23,6 @@ COPY copy/sbin/link_mutable_files.py /sbin/link_mutable_files.py
 COPY copy/sbin/server_run.sh /sbin
 RUN chmod a+x /sbin/server_run.sh /sbin/link_mutable_files.py
 RUN mkdir /traverse
-RUN sed -i 's/Server=.*/Server=zabbix/' /etc/zabbix/zabbix_agentd.conf
 
 COPY copy/etc/supervisor/conf.d/supervisor.conf /etc/supervisor/conf.d/
 COPY copy/etc/supervisor/conf.d/supervisor-sshd.conf /etc/supervisor/conf.d/

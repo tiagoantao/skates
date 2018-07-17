@@ -9,7 +9,7 @@ Infrastructure
 
 Skates can be installed on Bare Metal or Cloud providers. Currently we tested on Google Cloud.
 
-.. warning:: Kubernetes on the cloud
+.. warning:: **Kubernetes on the cloud**
 
    We currently do all the Kubernetes management manually. This means that we do not create vendor locking, but management of the
    Kubernetes cluster is (y)our responsibility. In the future we might do specialized configurations targeting proprietary cloud
